@@ -12,3 +12,7 @@ Route::get('/room/{room}', 'RoomController@enter');
 Route::post('/room/add', 'RoomController@handleAdd');
 
 //Song Routes
+
+
+//Twitter Routes
+Route::post('/twitter/search', 'TwitterController@handleSearch');

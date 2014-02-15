@@ -2,6 +2,11 @@
 
 @stop
 @section('content')
+{{Form::open(array('action'=>'TwitterController@handleSearch', 'method' => 'post'))}}
+  {{Form::label('Search Tweets', 'Search Tweets')}}
+  {{Form::text('query', 'Search Tweets')}}
+  {{Form::submit()}}
+{{Form::close()}}
 
 <h1>Active Rooms</h1>
 
