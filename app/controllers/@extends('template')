@@ -1,0 +1,5 @@
+@extends('template')
+@stop
+@section('content')
+
+@stop

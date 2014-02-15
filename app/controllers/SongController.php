@@ -2,9 +2,9 @@
 
 class SongController extends BaseController {
 
-	public function showWelcome()
+	public function add()
 	{
-		return View::make('hello');
+		
 	}
 
 }
