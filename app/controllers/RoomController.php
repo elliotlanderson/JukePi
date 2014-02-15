@@ -26,7 +26,7 @@ class RoomController extends BaseController {
 
 	public function remove()
 	{
-
+		
 	}
 
 	public function enter($room)
