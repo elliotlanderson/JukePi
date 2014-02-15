@@ -7,5 +7,8 @@ Route::model('remove', 'remove');
 Route::get('/room', 'RoomController@index');
 Route::get('/room/add', 'RoomController@add');
 Route::get('/room/remove', 'RoomController@remove');
+Route::get('/room/{room}', 'RoomController@enter');
+
+Route::post('/room/add', 'RoomController@handleAdd');
 
 //Song Routes
