@@ -26,12 +26,12 @@ class RoomController extends BaseController {
 
 	public function remove()
 	{
-		
+
 	}
 
-	public function enter($room)
+	public function enter($room_name)
 	{
-		$room = Room::find($room);
+		$room = Room::where('name','=',$room_name)->firstOrFail();
 
 		$songs = $room->songs()->orderBy('id','desc')->get();
 

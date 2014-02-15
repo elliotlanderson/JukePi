@@ -262,15 +262,4 @@ class TwitterAPIExchange
 
 }
 
-function tweets2array($tweets){
-    $tweetRecords = array();
-    foreach($tweets['statuses'] as $tweet){
-        $tweetobj = new stdClass();
-        $tweetobj->text = $tweet['text'];
-        $tweetobj->created_at = $tweet['created_at'];
-        $tweetobj->from_user_name = $tweet['user']['screen_name'];
 
-        $tweetRecords[] = $tweetobj;
-    }
-    return $tweetRecords;
-}

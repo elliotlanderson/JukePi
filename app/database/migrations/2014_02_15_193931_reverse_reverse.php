@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ChangingSongId extends Migration {
+class ReverseReverse extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -19,7 +19,7 @@ class ChangingSongId extends Migration {
 			});
 		Schema::table('songs', function($table)
 			{
-				$table->integer('id');
+				$table->increments('id');
 			});
 	}
 
@@ -30,14 +30,13 @@ class ChangingSongId extends Migration {
 	 */
 	public function down()
 	{
-		//
 		Schema::table('songs', function($table)
 			{
 				$table->dropColumn('id');
 			});
 		Schema::table('songs', function($table)
 			{
-				$table->increments('id');
+				$table->integer('id');
 			});
 	}
 

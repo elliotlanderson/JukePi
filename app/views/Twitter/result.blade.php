@@ -15,9 +15,16 @@
                 <th>
                     Created At
                 </th>
+                <td>
+                	In Response to
+                </td>
+                <td>
+                	Profile Image
+                </td>
             </tr>
 
 		@foreach($tweetRecords as $tweetRecord)
+
             <tr>
                 <td>
 					{{ $tweetRecord->text }}
@@ -27,6 +34,12 @@
                 </td>
                 <td>
 					{{ $tweetRecord->created_at }}
+                </td>
+                <td>
+                	{{ $tweetRecord->in_reply_to_screen_name }}
+                </td>
+                <td>
+                	<img src = '{{$tweetRecord->profile_image_url}}'/>
                 </td>
             </tr>
 		@endforeach
