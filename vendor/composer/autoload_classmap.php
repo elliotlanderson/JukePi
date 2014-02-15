@@ -915,6 +915,7 @@ return array(
     'Psr\\Log\\LoggerInterface' => $vendorDir . '/psr/log/Psr/Log/LoggerInterface.php',
     'Psr\\Log\\LoggerTrait' => $vendorDir . '/psr/log/Psr/Log/LoggerTrait.php',
     'Psr\\Log\\NullLogger' => $vendorDir . '/psr/log/Psr/Log/NullLogger.php',
+    'ReverseReverse' => $baseDir . '/app/database/migrations/2014_02_15_193931_reverse_reverse.php',
     'Room' => $baseDir . '/app/models/Room.php',
     'RoomController' => $baseDir . '/app/controllers/RoomController.php',
     'SessionHandlerInterface' => $vendorDir . '/symfony/http-foundation/Symfony/Component/HttpFoundation/Resources/stubs/SessionHandlerInterface.php',
