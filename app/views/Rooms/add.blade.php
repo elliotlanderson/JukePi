@@ -3,10 +3,10 @@
 @section('content')
 <h1>Create a new Room</h1>
 
-{{Form::open(array('action' => 'RoomController@handleCreate', 'method' => 'post'))}}
+{{Form::open(array('action' => 'RoomController@handleAdd', 'method' => 'post'))}}
 
 	{{Form::label('Room Name', 'Room Name')}}
-	{{Form::text('roomName', 'Room Name')}}
+	{{Form::text('name', '#RoomName')}}
 	<br>
 
 	{{Form::label('Description', 'Description')}}

@@ -8,13 +8,13 @@
 @if($rooms->isEmpty())
 <p>No rooms at the moment :(</p>
 @else
-  @foreach($rooms as $room)
 <table class = 'table table-striped'>
   <th>
     <td>Room</td>
     <td>Description</td>
     <td>Queue</td>
   </th>
+  @foreach($rooms as $room)
   <tr>
     <td>
       {{$room->name}}
@@ -26,11 +26,12 @@
       songs will be here
     </td>
     <td>
-      <a href='#'>Join Room</a>
+      <a href="{{ url('', array('room', $room->id))}}">Join Room</a>
     </td>
   </tr>
-</table>
+
   @endforeach
+  </table>
 @endif
 
 <a href = " {{action('RoomController@add')}}">Create Room</a>
