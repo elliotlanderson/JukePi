@@ -1,17 +1,11 @@
 <?php
+//Model Bindings
+Route::model('song', 'Song');
+Route::model('remove', 'remove');
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the Closure to execute when that URI is requested.
-|
-*/
+//Room Routes
+Route::get('/room', 'RoomController@index');
+Route::get('/room/add', 'RoomController@add');
+Route::get('/room/remove', 'RoomController@remove');
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+//Song Routes
