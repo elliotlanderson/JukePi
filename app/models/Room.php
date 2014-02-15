@@ -2,5 +2,7 @@
 
 	class Room extends Eloquent {
 
+		
+
 	}
 ?>
