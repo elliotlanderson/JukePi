@@ -1,7 +1,7 @@
 @extends('template')
 @stop
 @section('content')
-	@if(empty($tweetRecords))
+	@if(empty($tweets))
 	<p>no tweets found :(</p>
 	@else
         <table class = 'table table-striped'>
@@ -19,27 +19,34 @@
                 	In Response to
                 </td>
                 <td>
+                    Hashtag
+                </td>
+                <td>
                 	Profile Image
                 </td>
             </tr>
 
-		@foreach($tweetRecords as $tweetRecord)
+		@foreach($tweets as $tweet)
 
             <tr>
                 <td>
-					{{ $tweetRecord->text }}
+					{{ $tweet['text'] }}
                 </td>
                 <td>
-					{{$tweetRecord->from_user_name }}
+					{{$tweet['user']['screen_name'] }}
                 </td>
                 <td>
-					{{ $tweetRecord->created_at }}
+					{{ $tweet['created_at'] }}
                 </td>
                 <td>
-                	{{ $tweetRecord->in_reply_to_screen_name }}
+                    @if(!empty($tweet['entities']['hashtags'][0]['text']))
+                        {{ $tweet['entities']['hashtags'][0]['text'] }}
+                    @endif
+                <td>
+                	{{ $tweet['user']['screen_name'] }}
                 </td>
                 <td>
-                	<img src = '{{$tweetRecord->profile_image_url}}'/>
+                	<img src = "{{$tweet['user']['profile_image_url']}}"/>
                 </td>
             </tr>
 		@endforeach
