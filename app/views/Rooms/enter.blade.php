@@ -27,7 +27,7 @@ function loadXMLDoc()
 window.setInterval(function(){
   /// call your function here
   loadXMLDoc();
-}, 5000);
+}, 10000);
 </script>
 
 <div id="test"></div>
