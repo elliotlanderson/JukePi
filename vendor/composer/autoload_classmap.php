@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AddAjaxLoad' => $baseDir . '/app/database/migrations/2014_02_16_064552_add_ajax_load.php',
     'AddingPrivacyField' => $baseDir . '/app/database/migrations/2014_02_15_065510_adding_privacy_field.php',
     'BaseController' => $baseDir . '/app/controllers/BaseController.php',
     'Boris\\Boris' => $vendorDir . '/d11wtq/boris/lib/Boris/Boris.php',

@@ -29,12 +29,14 @@ class RoomController extends BaseController {
 
 	}
 
-	public function enter($room_name)
+	public function enter($room_id)
 	{
 		
-		$room = Room::where('name','=', $room_name)->firstOrFail();
+		$room = Room::find($room_id);
+		Session::put('room_id', $room->id);
 
-		$songs = $room->songs()->orderBy('id','desc')->get();
+
+		$songs = $room->songs()->orderBy('id','asc')->get();
 
 		return View::make('Rooms.enter')
 			->with('room', $room)
