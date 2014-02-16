@@ -6,11 +6,11 @@
 {{Form::open(array('action' => 'RoomController@handleAdd', 'method' => 'post'))}}
 
 	{{Form::label('Room Name', 'Room Name')}}
-	{{Form::text('name', '#RoomName')}}
+	{{Form::text('name', null, array('placeholder'=>'RoomName'))}}
 	<br>
 
 	{{Form::label('Description', 'Description')}}
-	{{Form::textarea('description', 'description')}}
+	{{Form::textarea('description', null, array('placeholder'=>'Description'))}}
 	<br>
 
 	<b>Privacy?</b>

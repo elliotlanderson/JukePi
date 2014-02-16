@@ -1,6 +1,7 @@
 @extends('template')
-@stop
+
 @section('content')
+<div id="test"></div>
 	@if( $songs->isEmpty())
 		<p>Sorry no songs have been queued yet! :(</p>
 	@else
@@ -12,10 +13,10 @@
 		@foreach($songs as $song)
 		<tr>
 			<td>
-				{{$song->name}}
+				{{$song->title}}
 			</td>
 			<td>
-				$song->user
+				{{$song->artist}}
 			</td>
 		</tr>
 		</table>
@@ -23,5 +24,8 @@
 
 		@endforeach
 	@endif
-	<a href = '#'>Add Song</a>
+
+	<form action="{{action('SongController@handleSearch')}}" method="post">
+	<input type="text" name="query" placeholder="Song Name" />
+	<input type="submit" value="Add Song" class="btn btn-primary">
 @stop

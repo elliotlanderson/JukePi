@@ -66,9 +66,9 @@ return array(
 		'pgsql' => array(
 			'driver'   => 'pgsql',
 			'host'     => 'localhost',
-			'database' => 'database',
+			'database' => 'jukepi',
 			'username' => 'root',
-			'password' => '',
+			'password' => 'Nsr10ojif??',
 			'charset'  => 'utf8',
 			'prefix'   => '',
 			'schema'   => 'public',

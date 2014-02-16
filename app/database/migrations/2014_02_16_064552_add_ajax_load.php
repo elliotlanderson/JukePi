@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTweetsTable extends Migration {
+class AddAjaxLoad extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -13,7 +13,10 @@ class CreateTweetsTable extends Migration {
 	public function up()
 	{
 		//
-
+		Schema::table('songs', function($table)
+		{
+			$table->boolean('isLoaded');
+		});
 	}
 
 	/**
@@ -24,7 +27,6 @@ class CreateTweetsTable extends Migration {
 	public function down()
 	{
 		//
-		Schema::drop('tweetes');
 	}
 
 }
