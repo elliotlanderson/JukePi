@@ -21,7 +21,7 @@ class RoomController extends BaseController {
 		$room->privacy 		= Input::get('privacy');
 		$room->save();
 
-		return View::make('Rooms.index')->with('message', 'Room ' . $room->name . ' has been created');
+		return Redirect::to("/room/$room->id");
 	}
 
 	public function remove()

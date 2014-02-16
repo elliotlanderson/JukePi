@@ -1,9 +1,5 @@
 <?php
 
-Route::get('/', function()
-{
-	
-})
 //Model Bindings
 Route::model('song', 'Song');
 Route::model('remove', 'remove');

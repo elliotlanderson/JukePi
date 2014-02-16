@@ -2,28 +2,59 @@
 
 @section('content')
 <div id="test"></div>
-	@if( $songs->isEmpty())
-		<p>Sorry no songs have been queued yet! :(</p>
-	@else
-		<table>
-			<th>
-				<td>Song</td>
-				<td>User</td>
-			</th>
-		@foreach($songs as $song)
-		<tr>
-			<td>
-				{{$song->title}}
-			</td>
-			<td>
-				{{$song->artist}}
-			</td>
-		</tr>
-		</table>
-		<br>
-
-		@endforeach
-	@endif
+	<div class="row" style="background-color: #f0f1f5; max-width:100%; ">
+      <div style="margin-top:30px;"><div class="large-7 columns" style=" margin-left:3%;">
+        <div class="row" style="height: 70px; width:100%;">
+          <div class="large-2 columns navtile">
+              <img src="img/logo.png"></img>
+          </div>
+          <div class="large-2 columns navtile" style="padding-left:0px; padding-right: 0px;"><a style="color: black;" href="{{action('RoomController@index')}}"><div class="blue">ROOMS</div></a></div>
+        </div>
+      </div>
+      <div class="large-3 columns" style="float:right; margin-right:3%;">
+        <div class="row">
+          <div class="large-4 columns navtile" style="margin-top:30px;"></div>
+          <div class="large-8 columns">
+            <div class="row">
+            </div>
+          </div>
+        </div>
+      </div></div>
+    </div>
+    <div class="behind">
+      <center><ul style="padding-top:3%; margin:0px;" class="small-block-grid-5">
+        <li><img src="http://placehold.it/200x150"></img></li>
+        <li><img src="http://placehold.it/200x150"></img></li>
+        <li><img src="http://placehold.it/200x150"></img></li>
+        <li><img src="http://placehold.it/200x150"></img></li>
+        <li><img src="http://placehold.it/200x150"></img></li>
+      </ul></center>
+        <center><ul style="margin:0px;" class="small-block-grid-5">
+        <li><img src="http://placehold.it/200x150"></img></li>
+        <li><img src="http://placehold.it/200x150"></img></li>
+        <li><img src="http://placehold.it/200x150"></img></li>
+        <li><img src="http://placehold.it/200x150"></img></li>
+        <li><img src="http://placehold.it/200x150"></img></li>
+      </ul></center>
+      <center><ul style="margin:0px;" class="small-block-grid-5">
+        <li><img src="http://placehold.it/200x150"></img></li>
+        <li><img src="http://placehold.it/200x150"></img></li>
+        <li><img src="http://placehold.it/200x150"></img></li>
+        <li><img src="http://placehold.it/200x150"></img></li>
+        <li><img src="http://placehold.it/200x150"></img></li>
+      </ul></center>
+    </div>
+    <div class="overlay">
+      <div class="row">
+        <div class="large-6 columns">
+          <img src="http://placehold.it/250x250">
+        </div>
+        <div class="large-6 columns">
+          <p class="roboto">Artist</p>
+          <p class="robotobig">Song Name</p>
+        </div>
+      </div>
+    </div>
 
 	<form action="{{action('SongController@handleSearch')}}" method="post">
 	<input type="text" name="query" placeholder="Song Name" />
