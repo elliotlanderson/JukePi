@@ -23,16 +23,16 @@ class TwitterController extends BaseController {
         $getfield = '?q=' . $search . '&count=50&lang=en';;
         $requestMethod = 'GET';
         $twitter = new TwitterAPIExchange($settings);
-        $Tweets = $twitter
+        $tweets = $twitter
             //->setGetfield($getfield)
              ->buildOauth($url, $requestMethod)
              ->performRequest();
         
-        $Tweets = json_decode($Tweets,true);
-        dd($Tweets);
-        $tweetRecords = tweets2array($Tweets);
+        $tweets = json_decode($tweets,true);
+        //dd($tweets);
+        //$tweetRecords = tweets2array($Tweets);
 
-        return View::make('Twitter.result')->with('tweetRecords', $tweetRecords);
+        return View::make('Twitter.result')->with('tweets', $tweets);
 	}
 }
 ?>
