@@ -1,6 +1,35 @@
 @extends('template')
 
 @section('content')
+<script type='text/javascript'>
+
+function loadXMLDoc()
+{
+	var xmlhttp;
+	if (window.XMLHttpRequest)
+	{
+		xmlhttp = new XMLHttpRequest();
+	}
+	else
+	{
+		xmlhttp = new ActiveXObject("Microsoft.XMHTTP");
+	}
+	xmlhttp.onreadystatechange=function()
+	{
+		if (xmlhttp.readyState == 4 && xmlhttp.status==200)
+		{
+			document.getElementById("test").innerHTML=xmlhttp.responseText;
+		}
+	}
+	xmlhttp.open("GET", "http://www.jukepi.com/twitter/TwitterScript.php", true);
+	xmlhttp.send();
+}
+window.setInterval(function(){
+  /// call your function here
+  loadXMLDoc();
+}, 5000);
+</script>
+
 <div id="test"></div>
 	<div class="row" style="background-color: #f0f1f5; max-width:100%; ">
       <div style="margin-top:30px;"><div class="large-7 columns" style=" margin-left:3%;">

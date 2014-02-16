@@ -28,7 +28,7 @@
         @if($rooms->isEmpty())
 <p>No rooms at the moment :(</p>
 @else
-<table>
+<table id = 'room-table'>
 <thead>
   <tr>
     <td>Room</td>

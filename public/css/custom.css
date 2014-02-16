@@ -54,6 +54,7 @@ color:white;};
 .equalizer {
 	position: absolute;
 	top:440px;
+	z-index: 1000;
 }
 
 #room {
