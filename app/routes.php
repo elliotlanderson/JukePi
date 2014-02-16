@@ -12,7 +12,10 @@ Route::get('/room/{room_name}', 'RoomController@enter');
 Route::post('/room/add', 'RoomController@handleAdd');
 
 //Song Routes
-
+Route::get('/room/{room_name}/song/add', 'SongController@search');
+Route::post('/song/search', 'SongController@handleSearch');
+Route::get('/song/results', 'SongController@results');
+Route::post('/room/song/add', 'SongController@handleAdd');
 
 //Twitter Routes
 Route::post('/twitter/search', 'TwitterController@handleSearch');

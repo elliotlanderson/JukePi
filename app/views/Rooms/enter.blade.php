@@ -23,5 +23,5 @@
 
 		@endforeach
 	@endif
-	<a href = '#'>Add Song</a>
+	<a href = "{{ action('SongController@add', array('room_name' => $room->name)) }}">Add Song</a>
 @stop

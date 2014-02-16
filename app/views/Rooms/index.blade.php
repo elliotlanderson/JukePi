@@ -31,7 +31,7 @@
       songs will be here
     </td>
     <td>
-      <a href="{{ url('', array('room', $room->id))}}">Join Room</a>
+      <a href="{{ url('', array('room', $room->name))}}">Join Room</a>
     </td>
   </tr>
 
