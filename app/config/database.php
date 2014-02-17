@@ -57,7 +57,7 @@ return array(
 			'host'      => 'localhost',
 			'database'  => 'jukepi',
 			'username'  => 'root',
-			'password'  => 'Nsr10ojif??',
+			'password'  => 'JukePi',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

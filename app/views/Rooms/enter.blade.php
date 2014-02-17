@@ -1,41 +1,40 @@
 @extends('template')
 
 @section('content')
-<script type='text/javascript'>
 
+<script>
 function loadXMLDoc()
 {
-	var xmlhttp;
-	if (window.XMLHttpRequest)
-	{
-		xmlhttp = new XMLHttpRequest();
-	}
-	else
-	{
-		xmlhttp = new ActiveXObject("Microsoft.XMHTTP");
-	}
-	xmlhttp.onreadystatechange=function()
-	{
-		if (xmlhttp.readyState == 4 && xmlhttp.status==200)
-		{
-			document.getElementById("test").innerHTML=xmlhttp.responseText;
-		}
-	}
-	xmlhttp.open("GET", "http://www.jukepi.com/twitter/TwitterScript.php", true);
-	xmlhttp.send();
+var xmlhttp;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+    }
+  }
+xmlhttp.open("GET","/twitter/TwitterScript.php?t=" + Math.random(),true);
+xmlhttp.send();
 }
-window.setInterval(function(){
-  /// call your function here
-  loadXMLDoc();
-}, 10000);
-</script>
 
+window.setInterval(function() {
+	loadXMLDoc();
+}, 5000);
+</script>
 <div id="test"></div>
 	<div class="row" style="background-color: #f0f1f5; max-width:100%; ">
       <div style="margin-top:30px;"><div class="large-7 columns" style=" margin-left:3%;">
         <div class="row" style="height: 70px; width:100%;">
           <div class="large-2 columns navtile">
-              <img src="img/logo.png"></img>
+              <img src="{{asset('img/logo.png')}}"></img>
           </div>
           <div class="large-2 columns navtile" style="padding-left:0px; padding-right: 0px;"><a style="color: black;" href="{{action('RoomController@index')}}"><div class="blue">ROOMS</div></a></div>
         </div>
@@ -50,38 +49,11 @@ window.setInterval(function(){
         </div>
       </div></div>
     </div>
-    <div class="behind">
-      <center><ul style="padding-top:3%; margin:0px;" class="small-block-grid-5">
-        <li><img src="http://placehold.it/200x150"></img></li>
-        <li><img src="http://placehold.it/200x150"></img></li>
-        <li><img src="http://placehold.it/200x150"></img></li>
-        <li><img src="http://placehold.it/200x150"></img></li>
-        <li><img src="http://placehold.it/200x150"></img></li>
-      </ul></center>
-        <center><ul style="margin:0px;" class="small-block-grid-5">
-        <li><img src="http://placehold.it/200x150"></img></li>
-        <li><img src="http://placehold.it/200x150"></img></li>
-        <li><img src="http://placehold.it/200x150"></img></li>
-        <li><img src="http://placehold.it/200x150"></img></li>
-        <li><img src="http://placehold.it/200x150"></img></li>
-      </ul></center>
-      <center><ul style="margin:0px;" class="small-block-grid-5">
-        <li><img src="http://placehold.it/200x150"></img></li>
-        <li><img src="http://placehold.it/200x150"></img></li>
-        <li><img src="http://placehold.it/200x150"></img></li>
-        <li><img src="http://placehold.it/200x150"></img></li>
-        <li><img src="http://placehold.it/200x150"></img></li>
-      </ul></center>
-    </div>
     <div class="overlay">
       <div class="row">
-        <div class="large-6 columns">
-          <img src="http://placehold.it/250x250">
-        </div>
-        <div class="large-6 columns">
-          <p class="roboto">Artist</p>
-          <p class="robotobig">Song Name</p>
-        </div>
+        @foreach ($songs as $song)
+        {{$song->title}}<br />
+        @endforeach
       </div>
     </div>
 
